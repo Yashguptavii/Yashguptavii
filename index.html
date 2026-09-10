@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b16" />
+    <title>Tempo — Focus timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="scene">
+      <div class="aurora aurora-one"></div>
+      <div class="aurora aurora-two"></div>
+      <nav class="topbar" aria-label="Primary navigation">
+        <a class="brand" href="#">tempo<span>·</span></a>
+        <div class="nav-actions">
+          <button class="icon-button sound-button" type="button" aria-label="Toggle sound" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h3l4 3V7l-4 3H4Zm10.5 2a3.5 3.5 0 0 0-2-3.15v6.3a3.5 3.5 0 0 0 2-3.15Zm0-7.5v2.06a6 6 0 0 1 0 10.88v2.06a8 8 0 0 0 0-15Z" /></svg>
+          </button>
+          <button class="profile" type="button" aria-label="Open profile">YG</button>
+        </div>
+      </nav>
+
+      <section class="timer-shell" aria-labelledby="timer-heading">
+        <div class="mode-picker" role="tablist" aria-label="Timer modes">
+          <button class="mode active" data-minutes="25" role="tab" aria-selected="true">Focus</button>
+          <button class="mode" data-minutes="5" role="tab" aria-selected="false">Short break</button>
+          <button class="mode" data-minutes="15" role="tab" aria-selected="false">Long break</button>
+        </div>
+
+        <div class="timer-stage">
+          <div class="orbit orbit-outer"></div>
+          <div class="orbit orbit-inner"></div>
+          <div class="dial-shadow"></div>
+          <article class="timer-card" id="timer-card">
+            <div class="card-topline">
+              <span class="status-dot"></span>
+              <p id="timer-heading">Focus session</p>
+              <span class="session-count">01 <i>/</i> 04</span>
+            </div>
+            <div class="time-wrap" aria-live="polite">
+              <span id="minutes">25</span><span class="colon">:</span><span id="seconds">00</span>
+            </div>
+            <p class="quote">“The quieter you become, the more you can hear.”</p>
+            <div class="timer-actions">
+              <button class="reset-button" id="reset" type="button">Reset</button>
+              <button class="start-button" id="start" type="button"><span class="play-icon">▶</span><span>Start focus</span></button>
+            </div>
+            <div class="card-reflection"></div>
+          </article>
+        </div>
+
+        <div class="progress-info">
+          <span>YOUR DAILY FOCUS</span>
+          <div class="progress-track"><div class="progress-fill"></div></div>
+          <strong>02:15 <small>/ 04:00</small></strong>
+        </div>
+      </section>
+
+      <footer>
+        <span><b></b> Ready when you are</span>
+        <span>Press <kbd>space</kbd> to start</span>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
